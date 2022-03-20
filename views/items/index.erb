@@ -5,21 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>routing and rendering</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+        th, td {
+            background-color: #96D4D4;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <% if @name %>
-      <h1>hellow <%= @name %> </h1>
       <table>
           <tr>
-              <td>name : </td>
+              <th>Item Name</th>
               <td><%= @name %></td>
           </tr>
           <tr>
-            <td>category : </td>
+            <th>Category</th>
             <td><%= @category %></td>
           </tr>
           <tr>
-            <td>price : </td>
+            <th>Price</th>
             <td><%= @price %></td>
           </tr>
       </table>
