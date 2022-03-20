@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>routing and rendering</title>
+</head>
+<body>
+    <% if @name %>
+      <h1>hellow <%= @name %> </h1>
+      <table>
+          <tr>
+              <td>name : </td>
+              <td><%= @name %></td>
+          </tr>
+          <tr>
+            <td>category : </td>
+            <td><%= @category %></td>
+          </tr>
+          <tr>
+            <td>price : </td>
+            <td><%= @price %></td>
+          </tr>
+      </table>
+    <% else %>
+      <h1>Belum isi </h1>
+    <% end %>
+
+
+</body>
+</html>

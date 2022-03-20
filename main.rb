@@ -34,3 +34,18 @@ post '/login' do
     redirect '/login'
   end
 end
+
+get '/items' do
+  erb :"/items/index"
+end
+
+post '/items' do
+  @name = params["name"]
+  @category = params["category"]
+  @price = params["price"]
+  erb :"/items/index"
+end
+
+get '/items/new' do
+  erb :"/items/new"
+end
