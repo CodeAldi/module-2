@@ -6,5 +6,19 @@ get '/' do
 end
 
 get '/messages' do
-  "<h1 style=\"background-color:DodgerBlue;\">Hello GenerasiGIGIH!</h1>"
+  erb :message, locals: {
+    name: 'GenerasiGIGIH'
+    color: 'DodgerBlue'
+  }
+end
+
+# ... (only showing relevant part of code)
+get '/messages/:name' do
+  name = params['name']
+  color = params['color'] ? params['color'] : 'DodgerBlue'
+    "<h1 style=\"background-color:#{color};\">Hello #{name}!</h1>"
+  erb :message, locals: {
+    name: name,
+    color: color
+  }
 end
