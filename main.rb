@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'config'
+#require_relative 'config'
 
 get '/' do
   'This is the home page. You will see this if you don\'t specify any specific route.'
@@ -7,12 +7,12 @@ end
 
 get '/messages' do
   erb :message, locals: {
-    name: 'GenerasiGIGIH'
+    name: 'GenerasiGIGIH',
     color: 'DodgerBlue'
   }
 end
 
-# ... (only showing relevant part of code)
+
 get '/messages/:name' do
   name = params['name']
   color = params['color'] ? params['color'] : 'DodgerBlue'
@@ -21,4 +21,16 @@ get '/messages/:name' do
     name: name,
     color: color
   }
+end
+
+get '/login' do
+  erb :login
+end
+
+post '/login' do
+  if params['username'] == 'admin' && params['password']=='admin'
+    redirect '/messages'
+  else
+    redirect '/login'
+  end
 end
